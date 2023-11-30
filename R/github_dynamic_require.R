@@ -12,7 +12,7 @@
 #'
 github_dynamic_require <- function(package, repository) {
   if(!requireNamespace("remotes", quietly = TRUE))
-    install.packages("remotes")
+    utils::install.packages("remotes")
   if(!eval(parse(text = paste("requireNamespace(", package, ")")))) {
     remotes::install_github(repository)
     eval(parse(text = paste("requireNamespace(", package, ")")))

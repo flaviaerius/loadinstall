@@ -10,7 +10,7 @@
 #' bioc_dynamic_require("edgeR")
 bioc_dynamic_require <- function(package) {
   if(!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+    utils::install.packages("BiocManager")
   if(!eval(parse(text = paste("requireNamespace(", package, ")")))) {
     BiocManager::install(package)
     eval(parse(text = paste("requireNamespace(", package, ")")))
