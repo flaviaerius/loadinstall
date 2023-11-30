@@ -11,10 +11,10 @@
 #'github_dynamic_require("ggpubr", "kassambara/ggpubr")
 #'
 github_dynamic_require <- function(package, repository) {
-  if(!requireNamespace("remotes", quietly = TRUE))
+  if(!require("remotes", quietly = TRUE))
     utils::install.packages("remotes")
-  if(!eval(parse(text = paste("requireNamespace(", package, ")")))) {
+  if(!eval(parse(text = paste("require(", package, ")")))) {
     remotes::install_github(repository)
-    eval(parse(text = paste("requireNamespace(", package, ")")))
+    eval(parse(text = paste("require(", package, ")")))
   }
 }

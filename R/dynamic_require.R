@@ -11,8 +11,8 @@
 #' x <- "wesanderson"
 #' dynamic_require("wesanderson")
 dynamic_require <- function(package){
-  if(!eval(parse(text = paste("requireNamespace(", package, ")")))) {
+  if(!eval(parse(text = paste("require(", package, ")")))) {
     utils::install.packages(package)
-    eval(parse(text = paste("requireNamespace(", package, ")")))
+    eval(parse(text = paste("require(", package, ")")))
   }
 }

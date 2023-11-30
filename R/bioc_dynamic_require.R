@@ -9,10 +9,10 @@
 #'
 #' bioc_dynamic_require("edgeR")
 bioc_dynamic_require <- function(package) {
-  if(!requireNamespace("BiocManager", quietly = TRUE))
-    utils::install.packages("BiocManager")
-  if(!eval(parse(text = paste("requireNamespace(", package, ")")))) {
+  if(!require("BiocManager", quietly = TRUE))
+    remotes::install_github("Bioconductor/BiocManager")
+  if(!eval(parse(text = paste("require(", package, ")")))) {
     BiocManager::install(package)
-    eval(parse(text = paste("requireNamespace(", package, ")")))
+    eval(parse(text = paste("require(", package, ")")))
   }
 }
