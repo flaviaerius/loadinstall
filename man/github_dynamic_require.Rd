@@ -7,12 +7,13 @@
 github_dynamic_require(package, repository)
 }
 \arguments{
-\item{package}{Name of the package between quotes (character vector).}
+\item{package}{character vector with name of the package you need to load/install.}
 
-\item{repository}{Repository address in the format "user/package", between quotes (character vector)}
+\item{repository}{character vector with github repository address in the format "user/package".}
 }
 \value{
-Loading of the package or installing of it. It might ask for permission to update libraries when installing.
+The function loads the package if you already have it installed, or installs from github if it is not installed yet.
+It might ask for permission to update libraries when installing.
 }
 \description{
 Load or install a package available at github

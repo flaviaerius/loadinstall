@@ -1,8 +1,11 @@
 #' Load or install a package available at Biocinductor
 #'
-#' @param package Name of the package between quotes (character vector).
+#' @param package
+#' character vector with name of the package you need to load/install.
 #'
-#' @return Loading of the package or installing of it. It might ask for permission to update libraries when installing.
+#' @return
+#' The function loads the package if you already have it installed, or installs from bioconductor if it is not installed yet.
+#' It might ask for permission to update libraries when installing.
 #' @export
 #'
 #' @examples
