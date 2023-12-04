@@ -8,11 +8,12 @@
 #' @examples
 #'
 #' bioc_dynamic_require("edgeR")
+#'
 bioc_dynamic_require <- function(package) {
-  if(!require("BiocManager", quietly = TRUE))
+  if(!requireNamespace("BiocManager", quietly = TRUE))
     remotes::install_github("Bioconductor/BiocManager")
-  if(!eval(parse(text = paste("require(", package, ")")))) {
+  if(!eval(parse(text = paste0("require('", package, "')")))) {
     BiocManager::install(package)
-    eval(parse(text = paste("require(", package, ")")))
+    eval(parse(text = paste0("require('", package, "')")))
   }
 }

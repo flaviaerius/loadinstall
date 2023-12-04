@@ -18,4 +18,5 @@ Load or install a package available at Biocinductor
 \examples{
 
 bioc_dynamic_require("edgeR")
+
 }
