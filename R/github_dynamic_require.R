@@ -19,8 +19,8 @@ github_dynamic_require <- function(package, repository) {
     stop("Missing package or repository.")
   if(!require("remotes", quietly = TRUE))
     utils::install.packages("remotes", repos = "http://cran.us.r-project.org")
-  if(!eval(parse(text = paste0("require('", package, "')")))) {
+  if(!require(package, character.only = TRUE)) {
     remotes::install_github(repository)
-    eval(parse(text = paste0("require('", package, "', quietly = TRUE)")))
+    require(package, character.only = TRUE)
   }
 }

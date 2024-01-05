@@ -15,8 +15,8 @@
 bioc_dynamic_require <- function(package) {
   if(!require("BiocManager", quietly = TRUE))
     remotes::install_github("Bioconductor/BiocManager")
-  if(!eval(parse(text = paste0("require('", package, "')")))) {
+  if(!require(package, character.only = TRUE)) {
     BiocManager::install(package)
-    eval(parse(text = paste0("require('", package, "', quietly = TRUE)")))
+    require(package, character.only = TRUE)
   }
 }

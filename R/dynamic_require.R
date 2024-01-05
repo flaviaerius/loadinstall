@@ -14,8 +14,8 @@
 #' dynamic_require("wesanderson")
 #'
 dynamic_require <- function(package){
-  if(!eval(parse(text = paste0("require('", package, "')")))) {
+  if(!require(package, character.only = TRUE)){
     utils::install.packages(package, repos = "http://cran.us.r-project.org")
-    eval(parse(text = paste0("require('", package, "', quietly = TRUE)")))
+    require(package, character.only = TRUE)
   }
 }
