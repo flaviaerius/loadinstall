@@ -15,7 +15,7 @@ just load it; if not, it will both install and load the package.
 No more needing to know which package is present or not in the
 environment you are working on!
 
-Sharing your Rmarkdown or Wuarto documents will be easier by using the
+Sharing your Rmarkdown or Quarto documents will be easier by using the
 dynamic_require() set of functions.
 
 ## Installation

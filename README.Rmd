@@ -24,7 +24,7 @@ It works very simply: if you already have the package installed, it will just lo
 
 No more needing to know which package is present or not in the environment you are working on! 
 
-Sharing your Rmarkdown or Wuarto documents will be easier by using the dynamic_require() set of functions.
+Sharing your Rmarkdown or Quarto documents will be easier by using the dynamic_require() set of functions.
 
 ## Installation
 
