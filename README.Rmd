@@ -13,16 +13,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-# loadinstall
+# :package: loadinstall :package:
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of loadinstall is to either load a package if you already have it installed, or install it if you need.
+__{loadinstall}__ is a package for _loading_ or _installing_ a package in R. 
+
+It works very simply: if you already have the package installed, it will just load it; if not, it will both install and load the package.
+
+No more needing to know which package is present or not in the environment you are working on! 
+
+Sharing your Rmarkdown or Wuarto documents will be easier by using the dynamic_require() set of functions.
 
 ## Installation
 
-You can install the development version of loadinstall from [GitHub](https://github.com/flaviaerius/loadinstall) with:
+You can install the development version of __{loadinstall}__ from [GitHub](https://github.com/flaviaerius/loadinstall) with:
 
 ``` r
 # install.packages("devtools")
@@ -45,4 +51,17 @@ github_dynamic_require("ggpubr", "kassambara/ggpubr")
 bioc_dynamic_require("edgeR")
 ```
 
+## Obs.:
+
+Since __{loadinstall}__ per se is a package that needs to be installed, a workaround is to include the following block of code in the beggining of your R script or an initial chunk in Quarto or Rmarkdown to install or load the package:
+
+```{r}
+if(!require("loadinstall")) {
+  if(!require("remotes", quietly = TRUE)) {
+    utils::install.packages("remotes", repos = "http://cran.us.r-project.org")
+  }
+  remotes::install_github("flaviaerius/loadinstall")
+  require("loadinstall")
+}
+```
 
