@@ -5,7 +5,7 @@ Authors@R:
     person("Flávia", "E. Rius", , "flaviaerius@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-5946-1165"))
 Description: {loadinstall} is a simple package to ease the reproducibility of Rmd and qmd scripts. IT has functions to load a package or install it when not available at the same time. You do not need to worry about whether you have or not a library available, for example, when you are running it in a new computer/environment.
-License: MIT + file LICENSE
+License: MIT
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3

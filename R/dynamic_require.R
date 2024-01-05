@@ -14,8 +14,7 @@
 #' dynamic_require("wesanderson")
 #'
 dynamic_require <- function(package){
-  if(!require(package, character.only = TRUE)){
-    utils::install.packages(package, repos = "http://cran.us.r-project.org")
-    require(package, character.only = TRUE)
-  }
+  if(!requireNamespace(package, quietly = TRUE)){
+    utils::install.packages(package, repos = "http://cran.us.r-project.org") }
+    library(package, character.only = TRUE)
 }

@@ -17,10 +17,9 @@
 github_dynamic_require <- function(package, repository) {
   if(length(package) == 0 | length(repository) == 0)
     stop("Missing package or repository.")
-  if(!require("remotes", quietly = TRUE))
+  if(!requireNamespace("remotes", quietly = TRUE))
     utils::install.packages("remotes", repos = "http://cran.us.r-project.org")
-  if(!require(package, character.only = TRUE)) {
-    remotes::install_github(repository)
-    require(package, character.only = TRUE)
-  }
+  if(!requireNamespace(package, quietly = TRUE)) {
+    remotes::install_github(repository) }
+    library(package, character.only = TRUE)
 }

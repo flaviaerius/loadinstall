@@ -1,4 +1,4 @@
-#' Load or install a package available at Biocinductor
+#' Load or install a package available at Bioconductor
 #'
 #' @param package
 #' character vector with name of the package you need to load/install.
@@ -13,10 +13,13 @@
 #' bioc_dynamic_require("edgeR")
 #'
 bioc_dynamic_require <- function(package) {
-  if(!require("BiocManager", quietly = TRUE))
+  if(!requireNamespace("BiocManager", quietly = TRUE)) {
+    if(!requireNamespace("remotes", quietly = TRUE)) {
+      utils::install.packages("remotes", repos = "http://cran.us.r-project.org")
+    }
     remotes::install_github("Bioconductor/BiocManager")
-  if(!require(package, character.only = TRUE)) {
-    BiocManager::install(package)
-    require(package, character.only = TRUE)
   }
+  if(!requireNamespace(package, quietly = TRUE)) {
+    BiocManager::install(package) }
+    library(package, character.only = TRUE)
 }

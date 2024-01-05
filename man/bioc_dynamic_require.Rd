@@ -2,7 +2,7 @@
 % Please edit documentation in R/bioc_dynamic_require.R
 \name{bioc_dynamic_require}
 \alias{bioc_dynamic_require}
-\title{Load or install a package available at Biocinductor}
+\title{Load or install a package available at Bioconductor}
 \usage{
 bioc_dynamic_require(package)
 }
@@ -14,7 +14,7 @@ The function loads the package if you already have it installed, or installs fro
 It might ask for permission to update libraries when installing.
 }
 \description{
-Load or install a package available at Biocinductor
+Load or install a package available at Bioconductor
 }
 \examples{
 
