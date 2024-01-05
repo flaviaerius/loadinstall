@@ -14,7 +14,7 @@
 #' dynamic_require("wesanderson")
 #'
 dynamic_require <- function(package){
-  if(!eval(parse(text = paste0("requireNamespace('", package, "')")))) {
+  if(!eval(parse(text = paste0("require('", package, "')")))) {
     utils::install.packages(package, repos = "http://cran.us.r-project.org")
     eval(parse(text = paste0("require(", package, ")")))
   }
