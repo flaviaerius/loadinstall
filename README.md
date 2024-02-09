@@ -36,7 +36,6 @@ This is a basic example which shows you how to solve a common problem:
 library(loadinstall)
 ## basic example code
 dynamic_require("dplyr")
-#> Loading required package: dplyr
 #> 
 #> Attaching package: 'dplyr'
 #> The following objects are masked from 'package:stats':
@@ -48,18 +47,14 @@ dynamic_require("dplyr")
 
 ## github install
 github_dynamic_require("ggpubr", "kassambara/ggpubr")
-#> Loading required package: ggpubr
 #> Loading required package: ggplot2
 
 ## bioconductor install
 bioc_dynamic_require("edgeR")
-#> Bioconductor version '3.17' is out-of-date; the current release version '3.18'
-#>   is available with R version '4.3'; see https://bioconductor.org/install
-#> Loading required package: edgeR
 #> Loading required package: limma
 ```
 
-## Obs.:
+## PS:
 
 Since **{loadinstall}** per se is a package that needs to be installed,
 a workaround is to include the following block of code in the beggining

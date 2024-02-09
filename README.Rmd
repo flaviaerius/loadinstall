@@ -51,7 +51,7 @@ github_dynamic_require("ggpubr", "kassambara/ggpubr")
 bioc_dynamic_require("edgeR")
 ```
 
-## Obs.:
+## PS:
 
 Since __{loadinstall}__ per se is a package that needs to be installed, a workaround is to include the following block of code in the beggining of your R script or an initial chunk in Quarto or Rmarkdown to install or load the package:
 
